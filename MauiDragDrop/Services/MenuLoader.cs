@@ -5,17 +5,34 @@ namespace MauiDragDrop.Services;
 
 public static class MenuLoader
 {
-    public static async Task<MenuData> LoadAsync(string path)
+
+    public static async Task<MenuData> LoadAsync(string filePath)
     {
-        await using FileStream stream = File.OpenRead(path);
-        var data = await JsonSerializer.DeserializeAsync<MenuData>(stream) ?? new MenuData();
-        return data;
+        if (!File.Exists(filePath))
+            throw new FileNotFoundException($"Menu file not found: {filePath}");
+
+        try
+        {
+            var json = await File.ReadAllTextAsync(filePath);
+            var options = new JsonSerializerOptions
+            {
+                PropertyNameCaseInsensitive = true,
+            };
+            var data = JsonSerializer.Deserialize<MenuData>(json, options);
+            if (data == null)
+                throw new JsonException("Deserialized menu data was null");
+            return data;
+        }
+        catch (JsonException ex)
+        {
+            throw new InvalidDataException("Malformed menu JSON.", ex);
+        }
     }
 
-    public static async Task SaveAsync(string path, MenuData data)
+    public static async Task SaveAsync(string filePath, MenuData data)
     {
-        await using FileStream stream = File.Create(path);
         var options = new JsonSerializerOptions { WriteIndented = true };
-        await JsonSerializer.SerializeAsync(stream, data, options);
+        var json = JsonSerializer.Serialize(data, options);
+        await File.WriteAllTextAsync(filePath, json);
     }
 }
