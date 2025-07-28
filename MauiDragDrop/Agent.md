@@ -1,0 +1,1 @@
+﻿- When discussing ambiguous references or suggesting fixes, always provide fully qualified library paths for types and namespaces
