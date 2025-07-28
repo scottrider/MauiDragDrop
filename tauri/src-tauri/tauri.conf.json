@@ -1,0 +1,21 @@
+{
+  "build": {
+    "beforeDevCommand": "dotnet run --project ../MauiDragDrop",
+    "beforeBuildCommand": "dotnet publish ../MauiDragDrop -c Release",
+    "devPath": "../web",
+    "distDir": "../web"
+  },
+  "package": {
+    "productName": "MauiDragDrop",
+    "version": "0.1.0"
+  },
+  "tauri": {
+    "windows": [
+      {
+        "title": "MauiDragDrop",
+        "width": 800,
+        "height": 600
+      }
+    ]
+  }
+}
