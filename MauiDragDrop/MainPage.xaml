@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiDragDrop.MainPage">
+    <ContentPage.Resources>
+        <DataTemplate x:Key="DefaultTemplate">
+            <Frame Padding="10" Margin="5" BorderColor="LightGray">
+                <Label Text="{Binding Text}" FontSize="18"/>
+            </Frame>
+        </DataTemplate>
+
+        <DataTemplate x:Key="FormTemplate">
+            <Frame Padding="10" Margin="5" BorderColor="LightGray">
+                <StackLayout>
+                    <Label Text="{Binding Text}" FontAttributes="Bold"/>
+                    <Entry Placeholder="Edit Value Here"/>
+                </StackLayout>
+            </Frame>
+        </DataTemplate>
+
+        <local:MenuItemTemplateSelector 
+        x:Key="MenuTemplateSelector"
+        DefaultTemplate="{StaticResource DefaultTemplate}"
+        FormTemplate="{StaticResource FormTemplate}" />
+    </ContentPage.Resources>
+
+    <ScrollView>
+        <VerticalStackLayout
+            Padding="30,0"
+            Spacing="25">
+            <CollectionView 
+                x:Name="MenuCollectionView"
+                ItemsSource="{Binding MenuItems}" 
+                ItemTemplate="{StaticResource MenuTemplateSelector}"
+                ReorderMode="DragAndDrop"
+                CanReorderItems="True"
+                DragReorderCompleted="OnDragReorderCompleted">
+            </CollectionView>
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>

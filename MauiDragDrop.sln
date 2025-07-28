@@ -1,0 +1,36 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36310.24 d17.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MauiDragDrop", "MauiDragDrop\MauiDragDrop.csproj", "{20A34874-49E2-4298-BE27-7F64A6B77101}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MauiDragDrop.WinUI", "MauiDragDrop.WinUI\MauiDragDrop.WinUI.csproj", "{F179A3F5-815A-4160-AB38-6711F2BA04A7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MauiDragDrop.Tests", "MauiDragDrop.Tests\MauiDragDrop.Tests.csproj", "{0DBDDDE7-C55D-DCD0-2F1B-054D9B7AA595}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{20A34874-49E2-4298-BE27-7F64A6B77101}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{20A34874-49E2-4298-BE27-7F64A6B77101}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{20A34874-49E2-4298-BE27-7F64A6B77101}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{20A34874-49E2-4298-BE27-7F64A6B77101}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F179A3F5-815A-4160-AB38-6711F2BA04A7}.Debug|Any CPU.ActiveCfg = Debug|x64
+		{F179A3F5-815A-4160-AB38-6711F2BA04A7}.Debug|Any CPU.Build.0 = Debug|x64
+		{F179A3F5-815A-4160-AB38-6711F2BA04A7}.Release|Any CPU.ActiveCfg = Release|x64
+		{F179A3F5-815A-4160-AB38-6711F2BA04A7}.Release|Any CPU.Build.0 = Release|x64
+		{0DBDDDE7-C55D-DCD0-2F1B-054D9B7AA595}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0DBDDDE7-C55D-DCD0-2F1B-054D9B7AA595}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0DBDDDE7-C55D-DCD0-2F1B-054D9B7AA595}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0DBDDDE7-C55D-DCD0-2F1B-054D9B7AA595}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E96745AD-B6FD-4024-AB53-A3050255F94F}
+	EndGlobalSection
+EndGlobal

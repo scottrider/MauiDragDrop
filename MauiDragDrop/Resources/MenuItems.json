@@ -1,0 +1,15 @@
+{
+  "MenuBar": [
+    {
+      "Title": "Main",
+      "Items": [
+        { "Text": "Home" },
+        { "Text": "Projects" },
+        { "Text": "Settings" },
+        { "Text": "Help" },
+        { "Text": "Exit" }
+      ]
+    }
+  ],
+  "DraggableItems": []
+}
