@@ -9,13 +9,19 @@ MauiDragDrop is a sample application exploring drag-and-drop support using .NET 
 
 ## Building the .NET MAUI Project
 
-1. Restore dependencies and build the solution:
+1. Restore the required workloads:
+
+   ```bash
+   dotnet workload restore
+   ```
+
+2. Restore dependencies and build the solution:
 
    ```bash
    dotnet build MauiDragDrop.sln
    ```
 
-2. Run the MAUI app:
+3. Run the MAUI app:
 
    ```bash
    dotnet build MauiDragDrop -t:Run -f net8.0-windows10.0.19041.0
@@ -34,4 +40,5 @@ MauiDragDrop is a sample application exploring drag-and-drop support using .NET 
 ## Planned Tauri Integration
 
 There is ongoing work to explore running the MAUI UI inside a Tauri shell for a lightweight desktop deployment. This requires Node.js and the Tauri CLI installed globally. Instructions for building with Tauri will be added as the integration progresses.
+
 This project is licensed under the [MIT License](LICENSE).
