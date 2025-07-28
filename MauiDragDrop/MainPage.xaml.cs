@@ -36,7 +36,7 @@ public partial class MainPage : ContentPage
                 var defaultJson = await FileSystem.OpenAppPackageFileAsync("MenuItems.json");
                 using var reader = new StreamReader(defaultJson);
                 var contents = await reader.ReadToEndAsync();
-                File.WriteAllText(_menuFile, contents);
+                await File.WriteAllTextAsync(_menuFile, contents);
             }
 
             _menuData = await MenuLoader.LoadAsync(_menuFile);
