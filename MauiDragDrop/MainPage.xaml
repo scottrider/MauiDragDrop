@@ -4,13 +4,13 @@
              x:Class="MauiDragDrop.MainPage">
     <ContentPage.Resources>
         <DataTemplate x:Key="DefaultTemplate">
-            <Frame Padding="10" Margin="5" BorderColor="LightGray">
+            <Frame Padding="10" Margin="5" BorderColor="LightGray" Loaded="OnFrameLoaded">
                 <Label Text="{Binding Text}" FontSize="18"/>
             </Frame>
         </DataTemplate>
 
         <DataTemplate x:Key="FormTemplate">
-            <Frame Padding="10" Margin="5" BorderColor="LightGray">
+            <Frame Padding="10" Margin="5" BorderColor="LightGray" Loaded="OnFrameLoaded">
                 <StackLayout>
                     <Label Text="{Binding Text}" FontAttributes="Bold"/>
                     <Entry Placeholder="Edit Value Here"/>
