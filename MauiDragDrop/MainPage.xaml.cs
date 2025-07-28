@@ -108,7 +108,7 @@ public partial class MainPage : ContentPage
         _dropIndicator = null;
     }
 
-    private async void OnDragReorderCompleted(object sender, EventArgs e)
+    private async void OnReorderCompleted(object sender, EventArgs e)
     {
         try
         {
