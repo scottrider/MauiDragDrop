@@ -18,7 +18,7 @@ MauiDragDrop is a sample application exploring drag-and-drop support using .NET 
 2. Run the MAUI app:
 
    ```bash
-   dotnet build MauiDragDrop -t:Run -f net10.0
+   dotnet build MauiDragDrop -t:Run -f net8.0-windows10.0.19041.0
    ```
 
 ## Building the WinUI Project
@@ -26,7 +26,7 @@ MauiDragDrop is a sample application exploring drag-and-drop support using .NET 
 1. Navigate to the WinUI project and build for Windows:
 
    ```bash
-   dotnet build MauiDragDrop.WinUI/MauiDragDrop.WinUI.csproj -f net10.0-windows10.0.19041.0
+   dotnet build MauiDragDrop.WinUI/MauiDragDrop.WinUI.csproj -f net8.0-windows10.0.19041.0
    ```
 
 2. To run the WinUI app, use Visual Studio or the `dotnet run` command with the desired runtime identifier.
