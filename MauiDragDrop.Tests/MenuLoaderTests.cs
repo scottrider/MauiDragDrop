@@ -35,11 +35,17 @@ public class MenuLoaderTests
         var path = Path.GetTempFileName();
         var data = new MenuData
         {
-            MenuItems = new ObservableCollection<MenuItem>
+            MenuBar = new ObservableCollection<MenuBar>
             {
-                new MenuItem { Text = "A" },
-                new MenuItem { Text = "B" },
-                new MenuItem { Text = "C" }
+                new MenuBar
+                {
+                    Items = new ObservableCollection<MenuItem>
+                    {
+                        new MenuItem { Text = "A" },
+                        new MenuItem { Text = "B" },
+                        new MenuItem { Text = "C" }
+                    }
+                }
             }
         };
 
