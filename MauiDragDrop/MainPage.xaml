@@ -30,12 +30,9 @@
             Padding="30,0"
             Spacing="25">
             <CollectionView
-                  x:Name="MenuCollectionView"
-                  ItemsSource="{Binding MenuItems}"
-                  ItemTemplate="{StaticResource MenuTemplateSelector}"
-                  ReorderMode="DragAndDrop"
-                  CanReorderItems="True"
-                  ReorderCompleted="OnReorderCompleted">
+                x:Name="MenuCollectionView"
+                ItemsSource="{Binding MenuItems}"
+                ItemTemplate="{StaticResource MenuTemplateSelector}">
             </CollectionView>
         </VerticalStackLayout>
     </ScrollView>
