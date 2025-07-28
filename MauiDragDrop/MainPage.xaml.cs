@@ -2,6 +2,7 @@
 using MauiDragDrop.Models;
 using MauiDragDrop.Services;
 using System.Collections.ObjectModel;
+using System.Linq;
 
 namespace MauiDragDrop;
 
@@ -49,17 +50,26 @@ public partial class MainPage : ContentPage
 
     private void AttachDragAndDropEvents()
     {
-        foreach (var item in MenuCollectionView.ItemsSource.Cast<MenuItem>())
-        {
-            var dragGesture = new DragGestureRecognizer();
-            dragGesture.DragStarting += OnDragStarting;
+        // Gestures are attached when each item frame is loaded.
+    }
 
-            var dropGesture = new DropGestureRecognizer();
-            dropGesture.DragOver += OnDragOver;
-            dropGesture.Drop += OnDrop;
+    private void OnFrameLoaded(object? sender, EventArgs e)
+    {
+        if (sender is not Frame frame)
+            return;
 
-            // Add gesture to your UI elements if using code-generated views
-        }
+        if (frame.GestureRecognizers.OfType<DragGestureRecognizer>().Any())
+            return;
+
+        var dragGesture = new DragGestureRecognizer();
+        dragGesture.DragStarting += OnDragStarting;
+
+        var dropGesture = new DropGestureRecognizer();
+        dropGesture.DragOver += OnDragOver;
+        dropGesture.Drop += OnDrop;
+
+        frame.GestureRecognizers.Add(dragGesture);
+        frame.GestureRecognizers.Add(dropGesture);
     }
 
     private void OnDragStarting(object sender, DragStartingEventArgs e)
