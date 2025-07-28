@@ -1,5 +1,4 @@
 # MauiDragDrop
-
 MauiDragDrop is a sample application exploring drag-and-drop support using .NET MAUI. It currently targets Windows through WinUI and demonstrates cross-platform UI capabilities.
 
 ## Prerequisites
@@ -35,3 +34,4 @@ MauiDragDrop is a sample application exploring drag-and-drop support using .NET 
 ## Planned Tauri Integration
 
 There is ongoing work to explore running the MAUI UI inside a Tauri shell for a lightweight desktop deployment. This requires Node.js and the Tauri CLI installed globally. Instructions for building with Tauri will be added as the integration progresses.
+This project is licensed under the [MIT License](LICENSE).
