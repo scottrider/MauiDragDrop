@@ -10,7 +10,7 @@ public class MenuItemTemplateSelector : DataTemplateSelector
 
     protected override DataTemplate OnSelectTemplate(object item, BindableObject container)
     {
-        if (item is MenuItem menuItem && string.IsNullOrWhiteSpace(menuItem.Text))
+        if (item is MauiDragDrop.Models.MenuItem menuItem && string.IsNullOrWhiteSpace(menuItem.Text))
         {
             return FormTemplate ?? DefaultTemplate!;
         }
