@@ -5,6 +5,7 @@ namespace MauiDragDrop.Services;
 
 public static class MenuLoader
 {
+
     public static async Task<MenuData> LoadAsync(string filePath)
     {
         if (!File.Exists(filePath))
