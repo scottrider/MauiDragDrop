@@ -15,11 +15,18 @@ public class MenuLoaderTests
         var path = Path.GetTempFileName();
         File.WriteAllText(path, json);
 
-        var data = await MenuLoader.LoadAsync(path);
+        try
+        {
+            var data = await MenuLoader.LoadAsync(path);
 
-        Assert.Equal(2, data.MenuItems.Count);
-        Assert.Equal("One", data.MenuItems[0].Text);
-        Assert.Equal("Two", data.MenuItems[1].Text);
+            Assert.Equal(2, data.MenuItems.Count);
+            Assert.Equal("One", data.MenuItems[0].Text);
+            Assert.Equal("Two", data.MenuItems[1].Text);
+        }
+        finally
+        {
+            File.Delete(path);
+        }
     }
 
     [Fact]
@@ -36,15 +43,22 @@ public class MenuLoaderTests
             }
         };
 
-        await MenuLoader.SaveAsync(path, data);
-        // reorder: move first to end
-        var first = data.MenuItems[0];
-        data.MenuItems.RemoveAt(0);
-        data.MenuItems.Add(first);
+        try
+        {
+            await MenuLoader.SaveAsync(path, data);
+            // reorder: move first to end
+            var first = data.MenuItems[0];
+            data.MenuItems.RemoveAt(0);
+            data.MenuItems.Add(first);
 
-        await MenuLoader.SaveAsync(path, data);
-        var loaded = await MenuLoader.LoadAsync(path);
+            await MenuLoader.SaveAsync(path, data);
+            var loaded = await MenuLoader.LoadAsync(path);
 
-        Assert.Equal(new[] { "B", "C", "A" }, loaded.MenuItems.Select(m => m.Text));
+            Assert.Equal(new[] { "B", "C", "A" }, loaded.MenuItems.Select(m => m.Text));
+        }
+        finally
+        {
+            File.Delete(path);
+        }
     }
 }
