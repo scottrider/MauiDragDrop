@@ -1,5 +1,5 @@
 ﻿using Microsoft.Maui.Controls.Shapes;
-using MauiDragDrop.Models;
+using Models = MauiDragDrop.Models;
 using MauiDragDrop.Services;
 using System.Collections.ObjectModel;
 using System.Linq;
@@ -9,10 +9,10 @@ namespace MauiDragDrop;
 public partial class MainPage : ContentPage
 {
     private BoxView? _dropIndicator;
-    private readonly string _menuFile = Path.Combine(FileSystem.AppDataDirectory, "MenuItems.json");
-    private MenuData _menuData = new();
+    private readonly string _menuFile = System.IO.Path.Combine(FileSystem.AppDataDirectory, "MenuItems.json");
+    private Models.MenuData _menuData = new();
 
-    public ObservableCollection<MenuItem> MenuItems => _menuData.MenuItems;
+    public ObservableCollection<Models.MenuItem> MenuItems => _menuData.MenuItems;
 
     public MainPage()
     {
