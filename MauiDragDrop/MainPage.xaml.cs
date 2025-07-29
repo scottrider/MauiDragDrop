@@ -72,7 +72,7 @@ public partial class MainPage : ContentPage
         frame.GestureRecognizers.Add(dropGesture);
     }
 
-    private void OnDragStarting(object sender, DragStartingEventArgs e)
+    private void OnDragStarting(object? sender, DragStartingEventArgs e)
     {
         if (sender is Frame frame)
         {
@@ -80,7 +80,7 @@ public partial class MainPage : ContentPage
         }
     }
 
-    private void OnDragOver(object sender, DragEventArgs e)
+    private void OnDragOver(object? sender, DragEventArgs e)
     {
         var layout = (sender as VisualElement)?.Parent as Layout;
         if (layout == null) return;
@@ -102,7 +102,7 @@ public partial class MainPage : ContentPage
         }
     }
 
-    private void OnDrop(object sender, DropEventArgs e)
+    private void OnDrop(object? sender, DropEventArgs e)
     {
         _dropIndicator?.RemoveFromParent();
         _dropIndicator = null;
